@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Firefox Extension Threat Detection",
+  "version": "1.0.0",
+  "description": "Detecta ameacas e rastreamento durante a navegacao web.",
+
+  "data_collection_permissions": {
+    "collects_data": false
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "storage",
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["background/background.js"],
+    "persistent": true
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    "fingerprint_hooks.js"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Firefox Extension Threat Detection",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "96": "icons/icon96.png"
+    }
+  },
+
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "privacy-monitor@insper",
+      "strict_min_version": "109.0"
+    }
+  }
+}

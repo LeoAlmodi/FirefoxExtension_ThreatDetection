@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Threat Detection</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Threat Detection</h1>
+    <div id="score-container">
+      <span id="score-label">Score</span>
+      <span id="score-value">--</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Third-party domains -->
+    <section id="sec-thirdparty">
+      <h2>Dominios de Terceira Parte <span class="count" id="cnt-thirdparty">0</span></h2>
+      <ul id="list-thirdparty"><li class="empty">Nenhum detectado.</li></ul>
+    </section>
+
+    <!-- Cookies -->
+    <section id="sec-cookies">
+      <h2>Cookies <span class="count" id="cnt-cookies">0</span></h2>
+      <div class="stats-row">
+        <span>1a parte: <b id="cnt-cookies-1st">0</b></span>
+        <span>3a parte: <b id="cnt-cookies-3rd">0</b></span>
+        <span>Sessao: <b id="cnt-cookies-session">0</b></span>
+        <span>Persistente: <b id="cnt-cookies-persistent">0</b></span>
+        <span>Supercookies: <b id="cnt-supercookies">0</b></span>
+      </div>
+      <ul id="list-cookies-3rd"><li class="empty">Nenhum cookie de terceira parte.</li></ul>
+      <ul id="list-supercookies"><li class="empty">Nenhum supercookie detectado.</li></ul>
+    </section>
+
+    <!-- Web Storage -->
+    <section id="sec-storage">
+      <h2>Web Storage / IndexedDB <span class="count" id="cnt-storage">0</span></h2>
+      <ul id="list-storage"><li class="empty">Nenhum dado armazenado.</li></ul>
+    </section>
+
+    <!-- Fingerprinting -->
+    <section id="sec-fingerprint">
+      <h2>Fingerprinting <span class="count" id="cnt-fingerprint">0</span></h2>
+      <ul id="list-fingerprint"><li class="empty">Nenhuma tecnica detectada.</li></ul>
+    </section>
+
+    <!-- Hijacking -->
+    <section id="sec-hijack">
+      <h2>Hijacking / Hooking <span class="count" id="cnt-hijack">0</span></h2>
+      <ul id="list-hijack"><li class="empty">Nenhuma ameaca detectada.</li></ul>
+    </section>
+
+    <!-- Cookie Syncing -->
+    <section id="sec-cookiesync">
+      <h2>Cookie Syncing <span class="count" id="cnt-cookiesync">0</span></h2>
+      <ul id="list-cookiesync"><li class="empty">Nenhuma sincronizacao detectada.</li></ul>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
